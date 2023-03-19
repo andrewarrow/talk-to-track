@@ -15,6 +15,7 @@ func HandleDashboard(c *router.Context, second, third string) {
 	projects := c.SelectAll("project", "where org_id=$1", params)
 
 	dash := map[string]any{"org": org,
-		"projects": projects}
+		"projects": projects,
+		"project":  projects[0]}
 	c.SendContentInLayout("dashboard.html", dash, 200)
 }

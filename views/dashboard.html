@@ -30,6 +30,18 @@
   </p>
 </div>
 <div class="grid-50">
+{{ $project := index . "project" }}
+Issues for {{ index $project "name"}}:
+{{ $issues := index . "issues" }}
+      <table>
+{{range $i, $item := $issues}}
+              <tr>
+                <td scope="row">{{ add $i 1 }}.</td>
+                <td>&nbsp;</td>
+                <td>{{ index $item "title" }}</td>
+              </tr>
+{{end}}
+      </table>
   <p>
     <a class="button-big" href="/">New Issue</a>
   </p>
