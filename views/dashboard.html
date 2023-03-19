@@ -38,7 +38,7 @@ Issues for <strong>{{ index $project "name"}}</strong>:
               <tr>
                 <td scope="row">{{ add $i 1 }}.</td>
                 <td>&nbsp;</td>
-                <td>{{ index $item "title" }}</td>
+                <td><a href="/issues/{{ index $item "guid" }}/">{{ index $item "title" }}</a></td>
               </tr>
 {{end}}
       </table>
