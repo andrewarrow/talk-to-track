@@ -1,0 +1,12 @@
+{{define "_models"}}
+             {{range $i, $item := .Models}}
+                  <tr class="athing">
+                    <td scope="row">
+                        <span class="rank">{{add $i 1}}.</span>
+                    </td>      
+                    <td>
+                        <a href="/models/{{$item.Name}}/">{{$item.Name}}</a>
+                    </td>
+                 </tr>
+             {{end}}
+{{end}}
