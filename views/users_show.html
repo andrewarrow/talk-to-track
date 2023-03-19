@@ -1,24 +1,19 @@
-<article class="grid">
-        <div>
-          <hgroup>
-            <h1>User Show</h1>
-            <h2>This is /users/x where x is username.</h2>
-          </hgroup>
-
+<div class="grid-100">
       <table role="grid">
               <tr>
                 <th scope="row">Username:</th>
+                <td>&nbsp;</td>
                 <td>{{ .Username }}</td>
               </tr>
               <tr>
                 <th scope="row">Created:</th>
+                <td>&nbsp;</td>
                 <td>{{ .Timestamp }}</td>
               </tr>
               <tr>
                 <th scope="row">Created Ago:</th>
+                <td>&nbsp;</td>
                 <td>{{ .Ago }}</td>
               </tr>
       </table>
-        </div>
-        <div></div>
-</article>
+</div>
