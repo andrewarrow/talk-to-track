@@ -11,7 +11,7 @@ func AfterCreateUser(c *router.Context, guid string) {
 
 	org := c.SelectOne("org", "where guid=$1", []any{newGuid})
 
-	c.UpdateOne("user", "org_id=$1", "user_id=$2", []any{org["id"], u.Id})
+	c.UpdateOne("user", "org_id=$1", "id=$2", []any{org["id"], u.Id})
 
 	params = map[string]any{"org_id": org["id"], "name": orgName + "_project1"}
 	c.Insert("project", params)
