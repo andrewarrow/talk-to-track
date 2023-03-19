@@ -3,41 +3,60 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style2.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style1.css">
     <script type='text/javascript' src="/assets/javascript/main.js"></script>
   </head>
 
   <body>
+<div id="wrapper">
+  <header role="banner" class="grid-container">
 
-    <nav class="container-fluid">
-      <ul>
-        <li><a href="/" class="contrast"><strong>{{.SiteName}}</strong></a></li>
-        <li> <a href="/about/">about</a> </li>
-      </ul>
-      <ul>
-                      {{ if .User }}
-                      <form id="logout" method="POST" action="/sessions/">
-                        <input type="hidden" name="_method" value="DELETE"/>
-                      </form>
-                      <li><a href="/users/{{ .User.Username }}/">{{ .User.Username }}</a> | <a onclick="doLogout(event);" href="#">logout</a></li>
-                      {{ else }}
-        <li> <a href="/sessions/new/">login</a> </li>
-                      {{ end }}
-      </ul>
-    </nav>
+<div class="grid-50">
+   <a href="/">{{.SiteName}}</a> |
+   <a href="/about/">about</a>
+</div>
+<div class="grid-50" style="text-align: right;">
 
-    <div id="flash" style="background-color: red; color: white; text-align: center;">{{.Flash}}</div>
+        {{ if .User }}
+         <form id="logout" method="POST" action="/sessions/">
+          <input type="hidden" name="_method" value="DELETE"/>
+         </form>
+        <a href="/users/{{ .User.Username }}/">{{ .User.Username }}</a> | <a onclick="doLogout(event);" href="#">logout</a>
+        {{ else }}
+        <a href="/sessions/new/">login</a>
+        {{ end }}
+
+</div>
+
+  <div class="grid-100">
+    <span id="brand">
+          &nbsp;  
+    </span>
+  </div>
+</header>
+
+  <main role="main" class="grid-container">
 
     {{ .Content }}
-
-    <footer class="container-fluid">
-            <center>
-                    <small><a href="https://github.com/andrewarrow/feedback">feedback</a></small>
-            </center>
-    </footer>
+  
+  </main>
+</div>
+<footer role="contentinfo">
+  <div class="grid-container">
+    <div class="grid-25">
+            &nbsp;
+    </div>
+    <div class="grid-50">
+        <a href="https://github.com/andrewarrow/feedback">https://github.com/andrewarrow/feedback</a>
+    </div>
+    <div class="grid-25">
+            &nbsp;
+    </div>
+  </div>
+</footer>
 
   </body>
 
