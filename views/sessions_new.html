@@ -1,24 +1,32 @@
 
-<article class="grid">
-        <div>
-          <hgroup>
+<div class="grid-100" style="text-align: center;">
             <h1>Login</h1>
-            <h2>Welcome back!</h2>
-          </hgroup>
           <form action="/sessions/" method="POST">
+                  <p>
             <input type="text" name="username" placeholder="Username" aria-label="Username" autocomplete="username" required>
+                  </p>
+                  <p>
             <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
-            <button type="submit" class="contrast">Login</button>
+                  </p>
+            <center>
+            <button class="button-big" type="submit" class="contrast">Login</button>
+            </center>
           </form>
-          <hgroup>
+</div>
+<div>
+        &nbsp;
+</div>
+<div class="grid-100" style="text-align: center;">
             <h1>Create Account</h1>
-            <h2>Hello New User!</h2>
-          </hgroup>
           <form action="/users/" method="POST">
+                  </p>
             <input type="text" name="username" placeholder="Username" aria-label="Username" autocomplete="username" required>
+                  </p>
+                  <p>
             <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
-            <button type="submit" class="contrast">Create Account</button>
+                  </p>
+            <center>
+            <button class="button-big" type="submit" class="contrast">Create Account</button>
+            </center>
           </form>
-        </div>
-        <div></div>
-</article>
+</div>
