@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"os"
+	"talk2track/app"
 	"time"
 
 	"github.com/andrewarrow/feedback/router"
@@ -22,6 +23,8 @@ func main() {
 		r.ResetDatabase()
 	} else if arg == "run" {
 		r := router.NewRouter()
+		r.Paths["/"] = app.HandleWelcome
+		r.Paths["dashboard"] = app.HandleDashboard
 		r.ListenAndServe(":3000")
 	} else if arg == "help" {
 	}
