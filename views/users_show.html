@@ -3,17 +3,17 @@
               <tr>
                 <th scope="row">Username:</th>
                 <td>&nbsp;</td>
-                <td>{{ .Username }}</td>
+                <td>{{ index . "username" }}</td>
               </tr>
               <tr>
                 <th scope="row">Created:</th>
                 <td>&nbsp;</td>
-                <td>{{ .Timestamp }}</td>
+                <td>{{ index . "created_at" }}</td>
               </tr>
               <tr>
                 <th scope="row">Created Ago:</th>
                 <td>&nbsp;</td>
-                <td>{{ .Ago }}</td>
+                <td>{{ index . "created_at_ago" }}</td>
               </tr>
       </table>
 </div>
