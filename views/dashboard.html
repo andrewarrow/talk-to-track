@@ -1,18 +1,30 @@
-<div class="grid-50">
+<div class="grid-100">
+      {{ $org := index . "org" }}
       <table role="grid">
               <tr>
                 <th scope="row">Org:</th>
                 <td>&nbsp;</td>
-                <td>{{ index . "name" }}</td>
+                <td>{{ index $org "name" }}</td>
               </tr>
       </table>
 </div>
 
-<div class="grid-50">
+<div class="grid-100">
         &nbsp;
 </div>
 
 <div class="grid-50">
+        Projects:
+{{ $projects := index . "projects" }}
+      <table>
+{{range $i, $item := $projects}}
+              <tr>
+                <td scope="row">{{ add $i 1 }}.</td>
+                <td>&nbsp;</td>
+                <td>{{ index $item "name" }}</td>
+              </tr>
+{{end}}
+      </table>
   <p>
     <a class="button-big" href="/">New Project</a>
   </p>
