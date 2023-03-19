@@ -9,5 +9,7 @@ func HandleDashboard(c *router.Context, second, third string) {
 		c.UserRequired = true
 		return
 	}
-	c.SendContentInLayout("dashboard.html", nil, 200)
+	params := []any{0}
+	rows := c.SelectAll("project", "where org_id=$1", params)
+	c.SendContentInLayout("dashboard.html", rows, 200)
 }
